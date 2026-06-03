@@ -190,13 +190,14 @@ function App() {
 
       {/* Content Section - Scrollable */}
       <div className="content-section">
-        <h1>Ambient Shadow Generator</h1>
+        <h1>Free Ambient Shadow Generator for Designers & Developers</h1>
         <p>
-          UMBRA is a free, client-side ambient shadow generator for digital product designers and frontend developers. 
-          Create multi-layered ambient shadows using power-coefficient interpolation, then export the CSS or Tailwind code.
+          UMBRA is a free, client-side ambient shadow generator designed for digital product designers and frontend developers. 
+          Create multi-layered ambient shadows using power-coefficient interpolation, then export the CSS or Tailwind code instantly. 
+          No signup required, no data collection, and 100% private.
         </p>
 
-        <h2>How to Use UMBRA</h2>
+        <h2>How to Use UMBRA Shadow Generator</h2>
         <ul>
           <li>Adjust the <strong>Layers</strong> slider to control the number of shadow layers (3-6)</li>
           <li>Modify <strong>Opacity</strong> to set the base alpha value of the shadow</li>
@@ -205,30 +206,36 @@ function App() {
           <li>Copy the generated CSS or Tailwind code for your project</li>
         </ul>
 
-        <h2>Key Features</h2>
+        <h2>Why Choose UMBRA for CSS Shadows?</h2>
         <ul>
           <li><strong>Power-coefficient interpolation:</strong> Each layer uses mathematical progression for natural depth</li>
           <li><strong>100% client-side:</strong> No data leaves your browser — complete privacy</li>
           <li><strong>Instant export:</strong> Copy CSS or Tailwind arbitrary values with one click</li>
           <li><strong>Mobile optimized:</strong> Works seamlessly on desktop and mobile devices</li>
+          <li><strong>Free forever:</strong> No signup, no limits, no premium tiers</li>
         </ul>
 
-        <h2>Code Example</h2>
+        <h2>CSS Shadow Code Example</h2>
         <p>Here's an example of the CSS output you'll get from UMBRA:</p>
         <pre><code>box-shadow: 0px 1.3px 4.0px rgba(0, 0, 0, 0.150), 0px 5.7px 13.6px rgba(0, 0, 0, 0.079), 0px 13.8px 28.0px rgba(0, 0, 0, 0.041), 0px 25.6px 48.0px rgba(0, 0, 0, 0.020), 0px 40.0px 80.0px rgba(0, 0, 0, 0.008);</code></pre>
 
-        <h2>Security & Privacy</h2>
+        <h2>Tailwind Shadow Integration</h2>
+        <p>UMBRA generates Tailwind arbitrary values that work seamlessly with your Tailwind CSS projects. Simply copy the Tailwind output and paste it into your className attribute. The shadow-[...] syntax allows you to use custom box-shadow values without configuring your tailwind.config.js file.</p>
+
+        <h2>Security & Privacy Guarantee</h2>
         <p>
           UMBRA runs entirely in your browser. Your shadow parameters are never uploaded, transmitted, or stored on any server. 
-          There is no backend, no database, and no tracking. The tool uses only React, Vite, and Tailwind CSS — all open-source libraries.
+          There is no backend, no database, and no tracking. The tool uses only React, Vite, and vanilla CSS — all open-source technologies.
+          Your design work stays private to you.
         </p>
 
         <h2>Frequently Asked Questions</h2>
         <ul>
-          <li><strong>Is UMBRA free?</strong> Yes, UMBRA is 100% free to use online.</li>
+          <li><strong>Is UMBRA free?</strong> Yes, UMBRA is 100% free to use online with no signup required.</li>
           <li><strong>Does UMBRA store my data?</strong> No, all processing happens in your browser. Nothing is sent to a server.</li>
           <li><strong>Can I use the generated code commercially?</strong> Yes, you retain all rights to the code you generate.</li>
           <li><strong>What browsers does UMBRA support?</strong> UMBRA works in all modern browsers that support JavaScript.</li>
+          <li><strong>Do I need to create an account?</strong> No, UMBRA requires no signup or account creation.</li>
         </ul>
 
         {/* Legal Links */}

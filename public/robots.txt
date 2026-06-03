@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://umbra.calyvent.com/sitemap.xml

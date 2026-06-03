@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --concrete: #E1E1DE;
   --carbon: #0C0C0C;
@@ -17,7 +13,6 @@ body {
   background-color: var(--concrete);
   color: var(--carbon);
   font-family: 'Helvetica Neue Extended', 'Helvetica Neue', Arial, sans-serif;
-  overflow: hidden;
 }
 
 .grain-overlay {
