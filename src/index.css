@@ -13,6 +13,18 @@ body {
   background-color: var(--concrete);
   color: var(--carbon);
   font-family: 'Helvetica Neue Extended', 'Helvetica Neue', Arial, sans-serif;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .grain-overlay {

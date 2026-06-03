@@ -8,14 +8,13 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://umbra.calyvent.com/terms.html">
   <meta name="theme-color" content="#0C0C0C">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <style>
     :root{ --concrete:#E1E1DE; --carbon:#0C0C0C; }
     *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; border-radius:0; }
     /* Terms inverts the canvas — carbon field, concrete type — to distinguish it from Privacy. */
-    body{ background:var(--carbon); color:var(--concrete); font-family:'Helvetica Neue Extended','Helvetica Neue',Arial,sans-serif; letter-spacing:-0.01em; line-height:1.6; -webkit-font-smoothing:antialiased; }
+    body{ background:var(--carbon); color:var(--concrete); font-family:'Helvetica Neue Extended','Helvetica Neue',Arial,sans-serif; letter-spacing:-0.01em; line-height:1.6; -webkit-font-smoothing:antialiased; animation: fadeIn 0.4s ease-out; }
+    @keyframes fadeIn{ from{ opacity:0; transform: translateY(10px); } to{ opacity:1; transform: translateY(0); } }
     .wrap{ max-width:760px; margin:0 auto; padding:clamp(28px,5vw,72px) clamp(20px,5vw,40px); }
     .top{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--concrete); padding-bottom:16px; margin-bottom:48px;
       font-family:'Akzidenz-Grotesk','Helvetica Neue',Arial,sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:0.25em; }

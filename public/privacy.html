@@ -8,13 +8,12 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://umbra.calyvent.com/privacy.html">
   <meta name="theme-color" content="#E1E1DE">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <style>
     :root{ --concrete:#E1E1DE; --carbon:#0C0C0C; }
     *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; border-radius:0; }
-    body{ background:var(--concrete); color:var(--carbon); font-family:'Helvetica Neue Extended','Helvetica Neue',Arial,sans-serif; letter-spacing:-0.01em; line-height:1.6; -webkit-font-smoothing:antialiased; }
+    body{ background:var(--concrete); color:var(--carbon); font-family:'Helvetica Neue Extended','Helvetica Neue',Arial,sans-serif; letter-spacing:-0.01em; line-height:1.6; -webkit-font-smoothing:antialiased; animation: fadeIn 0.4s ease-out; }
+    @keyframes fadeIn{ from{ opacity:0; transform: translateY(10px); } to{ opacity:1; transform: translateY(0); } }
     .wrap{ max-width:760px; margin:0 auto; padding:clamp(28px,5vw,72px) clamp(20px,5vw,40px); }
     .top{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--carbon); padding-bottom:16px; margin-bottom:48px;
       font-family:'Akzidenz-Grotesk','Helvetica Neue',Arial,sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:0.25em; }
@@ -48,7 +47,7 @@
     <p>Every operation — calculating multi-layered ambient shadows using power-coefficient interpolation, generating CSS box-shadow properties, mapping to Tailwind arbitrary variants, and rendering the live preview — is performed locally using JavaScript executing in your browser. Your inputs do not leave your device.</p>
 
     <h2>02 · What we store</h2>
-    <p>UMBRA uses your browser's <strong>local storage</strong> to keep a short history of your recent shadow configurations so you can restore them within a session. This data lives only on your device, is never sent anywhere, and can be erased at any time by clearing your browser storage.</p>
+    <p>UMBRA stores nothing. Your shadow parameters exist only in memory while you use the tool. When you close the tab, everything is gone. There is no server, no database, and no local storage.</p>
 
     <h2>03 · No accounts, no cookies, no tracking</h2>
     <p>There are no user accounts, no authentication, and no tracking cookies. We do not run third-party advertising or behavioural analytics on the tool. We cannot identify you.</p>
