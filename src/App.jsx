@@ -45,12 +45,12 @@ function App() {
       <div className="grain-overlay"></div>
       
       {/* Traffic Anchors */}
-      <div className="traffic-anchor traffic-anchor--left">
+      <a href="https://velocity.calyvent.com" target="_blank" rel="noopener noreferrer" className="traffic-anchor traffic-anchor--left">
         <span className="traffic-anchor__text">VELOCITY</span>
-      </div>
-      <div className="traffic-anchor traffic-anchor--right">
+      </a>
+      <a href="https://calyvent.com" target="_blank" rel="noopener noreferrer" className="traffic-anchor traffic-anchor--right">
         <span className="traffic-anchor__text">CALYVENT</span>
-      </div>
+      </a>
 
       {/* Logo */}
       <div className="logo">
@@ -146,6 +146,12 @@ function App() {
             {copied ? 'COPIED' : 'COPY'}
           </button>
         </div>
+      </div>
+
+      {/* Legal Links */}
+      <div className="legal-links">
+        <a href="/privacy.html" className="legal-link">Privacy</a>
+        <a href="/terms.html" className="legal-link">Terms</a>
       </div>
     </div>
   );
