@@ -62,17 +62,13 @@ function App() {
   }, []);
 
   const copyToClipboard = async (text, type) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      if (type === 'css') {
-        setCopiedCss(true);
-        setTimeout(() => setCopiedCss(false), 1500);
-      } else if (type === 'tailwind') {
-        setCopiedTailwind(true);
-        setTimeout(() => setCopiedTailwind(false), 1500);
-      }
-    } catch (err) {
-      console.error('Failed to copy:', err);
+    await navigator.clipboard.writeText(text);
+    if (type === 'css') {
+      setCopiedCss(true);
+      setTimeout(() => setCopiedCss(false), 1500);
+    } else if (type === 'tailwind') {
+      setCopiedTailwind(true);
+      setTimeout(() => setCopiedTailwind(false), 1500);
     }
   };
 
