@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 const generateShadowString = (layers, alpha, blur, offset) => {
@@ -22,27 +22,64 @@ function App() {
   const [blur, setBlur] = useState(80);
   const [offset, setOffset] = useState(40);
   const [shadowString, setShadowString] = useState('');
-  const [copied, setCopied] = useState(false);
+  const [copiedCss, setCopiedCss] = useState(false);
+  const [copiedTailwind, setCopiedTailwind] = useState(false);
+  const cursorRef = useRef(null);
 
   useEffect(() => {
     setShadowString(generateShadowString(layers, alpha, blur, offset));
   }, [layers, alpha, blur, offset]);
 
-  const copyToClipboard = async (text) => {
+  // Custom cursor
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    if (!cursor) return;
+
+    const handleMouseMove = (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    };
+
+    const handleMouseOver = (e) => {
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') {
+        cursor.classList.add('custom-cursor--hover');
+      }
+    };
+
+    const handleMouseOut = () => {
+      cursor.classList.remove('custom-cursor--hover');
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseout', handleMouseOut);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
+    };
+  }, []);
+
+  const copyToClipboard = async (text, type) => {
     try {
       await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      if (type === 'css') {
+        setCopiedCss(true);
+        setTimeout(() => setCopiedCss(false), 1500);
+      } else if (type === 'tailwind') {
+        setCopiedTailwind(true);
+        setTimeout(() => setCopiedTailwind(false), 1500);
+      }
     } catch (err) {
       console.error('Failed to copy:', err);
     }
   };
 
-  const tailwindValue = `shadow-[${shadowString.replace(/px/g, 'px').replace(/rgba/g, 'rgba')}]`;
-
   return (
     <div className="app">
       <div className="grain-overlay"></div>
+      <div ref={cursorRef} className="custom-cursor"></div>
       
       {/* Traffic Anchors */}
       <a href="https://velocity.calyvent.com" target="_blank" rel="noopener noreferrer" className="traffic-anchor traffic-anchor--left">
@@ -129,9 +166,9 @@ function App() {
           </div>
           <button
             className="copy-button"
-            onClick={() => copyToClipboard(`box-shadow: ${shadowString};`)}
+            onClick={() => copyToClipboard(`box-shadow: ${shadowString};`, 'css')}
           >
-            {copied ? 'COPIED' : 'COPY'}
+            {copiedCss ? 'COPIED' : 'COPY'}
           </button>
         </div>
         <div className="output-section">
@@ -141,9 +178,9 @@ function App() {
           </div>
           <button
             className="copy-button"
-            onClick={() => copyToClipboard(`shadow-[${shadowString}]`)}
+            onClick={() => copyToClipboard(`shadow-[${shadowString}]`, 'tailwind')}
           >
-            {copied ? 'COPIED' : 'COPY'}
+            {copiedTailwind ? 'COPIED' : 'COPY'}
           </button>
         </div>
       </div>

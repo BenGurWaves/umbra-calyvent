@@ -6,6 +6,35 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  cursor: none;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--carbon);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  opacity: 0.6;
+}
+
+.custom-cursor--hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .app {
+    cursor: auto;
+  }
+  .custom-cursor {
+    display: none;
+  }
 }
 
 /* Traffic Anchors */
@@ -22,6 +51,10 @@
 
 .traffic-anchor--right {
   right: 20px;
+}
+
+.traffic-anchor {
+  text-decoration: none;
 }
 
 .traffic-anchor__text {
